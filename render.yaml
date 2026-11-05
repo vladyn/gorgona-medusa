@@ -5,12 +5,12 @@ services:
     repo: https://github.com/vladyn/gorgona-medusa.git
     branch: render-deploy
     plan: standard
-    buildCommand: npm install --legacy-peer-deps && npm run build
+    buildCommand: npm install --legacy-peer-deps --include=dev && npm run build
     startCommand: npm run start
     healthCheckPath: /health
     envVars:
       - key: NODE_ENV
-        value: development
+        value: production
       - key: PORT
         value: 9000
       - key: DATABASE_URL
