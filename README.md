@@ -45,7 +45,7 @@ npx medusa user -e admin@example.com -p password
 
 ```bash
 npm run build
-npm run start
+npm run start --prefix .medusa/server
 ```
 
 ## Deploy on Render
@@ -72,7 +72,7 @@ If you prefer not to use the Blueprint:
 3. Set:
    - **Runtime:** Node
    - **Build Command:** `npm install --legacy-peer-deps && npm run build`
-   - **Start Command:** `npm run start`
+   - **Start Command:** `npm run start --prefix .medusa/server`
    - **Health Check Path:** `/health`
 4. Add the environment variables listed above.
 

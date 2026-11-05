@@ -5,8 +5,8 @@ services:
     repo: https://github.com/vladyn/gorgona-medusa.git
     branch: render-deploy
     plan: standard
-    buildCommand: sed -i '/^\.medusa/d' .gitignore && npm install --legacy-peer-deps --include=dev && npm run build && ls -la .medusa/server && ls -la .medusa/server/admin 2>/dev/null || echo 'NO ADMIN BUILD FOUND'
-    startCommand: npm run start
+    buildCommand: npm install --legacy-peer-deps --include=dev && npm run build
+    startCommand: npm run start --prefix .medusa/server
     healthCheckPath: /health
     envVars:
       - key: NODE_ENV
